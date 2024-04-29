@@ -66,7 +66,6 @@ searchInput.addEventListener('keydown', loadItemsFromLocalStorage);
 function saveItemsInLocalStorage(){
     const stringedItems = JSON.stringify(items);
     localStorage.setItem(storageKey, stringedItems);
-
 }
 
 function loadItemsFromLocalStorage(){
