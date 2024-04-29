@@ -31,8 +31,13 @@ function showItems(){
 
 function handleAddItem(){
     const content = addInput.value;
+    if (content === ""){
+        alert('Adicione um item primeiro!');
+        return
+    }
     items.push(content);
 
+    addInput.value = "";
     saveItemsInLocalStorage();
     showItems();
 }
@@ -53,10 +58,17 @@ function saveItemsInLocalStorage(){
 function loadItemsFromLocalStorage(){
     const storage = localStorage.getItem("items");
     if (storage){
-        return items = JSON.parse(storage); 
+        items = JSON.parse(storage); 
+        showItems();
+    }
+    
+    if (items.length === 0){
+        const emptyListText = document.createElement('p');
+        emptyListText.textContent = "Sua lista esta vazia :(";
+        divListItems.appendChild(emptyListText);
     }
 
-    showItems();
+   
 
 }
 

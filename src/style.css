@@ -118,6 +118,8 @@
 }
 
 .add-item > input{
+  width: 100%;
+  
   border: none;
   outline: none;
   background-color: transparent;
@@ -129,4 +131,10 @@
 
 .add-item > input::placeholder{
   color: #474F7A;
+}
+
+/* Outros elementos */
+
+hr{
+  width: 700px;
 }
