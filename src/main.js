@@ -1,6 +1,7 @@
 
 const addInput = document.getElementById('additem');
 const divListItems = document.getElementById('list-items');
+const searchInput = document.getElementById('searchinput');
 const storageKey = "items";
 
 let items = [];
@@ -29,13 +30,14 @@ function showItems(){
     })
 }
 
+//to-do functionalities
 function handleAddItem(){
     const content = addInput.value;
     if (content === ""){
         alert('Adicione um item primeiro!');
         return
     }
-    items.push(content);
+    items.push(content.toLowerCase());
 
     addInput.value = "";
     saveItemsInLocalStorage();
@@ -49,6 +51,18 @@ function handleRemoveItem( item ){
     loadItemsFromLocalStorage();
 }
 
+function handleSearchItem(){
+    const searchValue = searchInput.value;
+    if (searchValue){
+        items = items.filter( (item) => item.includes(searchValue)).map(item => item);
+        showItems();
+    }
+}
+
+searchInput.addEventListener('keypress', handleSearchItem);
+searchInput.addEventListener('keydown', loadItemsFromLocalStorage);
+
+//localStorage
 function saveItemsInLocalStorage(){
     const stringedItems = JSON.stringify(items);
     localStorage.setItem(storageKey, stringedItems);
@@ -67,9 +81,6 @@ function loadItemsFromLocalStorage(){
         emptyListText.textContent = "Sua lista esta vazia :(";
         divListItems.appendChild(emptyListText);
     }
-
-   
-
 }
 
 document.addEventListener("DOMContentLoaded", loadItemsFromLocalStorage)
