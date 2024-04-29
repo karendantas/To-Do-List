@@ -19,7 +19,7 @@ function showItems(){
         text.textContent = item;
 
         button.textContent = 'x';
-        button.onclick = () => handleRemoveItem(item);
+        button.onclick = () => handleRemoveItem(items.indexOf(item));
 
         div.classList.add('item');
         div.appendChild(text);
@@ -47,7 +47,7 @@ function handleAddItem(){
 
 
 function handleRemoveItem( item ){
-    items.pop(item);
+    items.splice(item, 1);
 
     saveItemsInLocalStorage();
     loadItemsFromLocalStorage();
