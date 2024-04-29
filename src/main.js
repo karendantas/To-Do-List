@@ -1,13 +1,13 @@
 
-let items = ['Arrumar a casa', 'BVuyrrraaaaa'];
-
 const addInput = document.getElementById('additem');
 const divListItems = document.getElementById('list-items');
+const storageKey = "items";
 
+let items = [];
 
 function showItems(){
 
-    divListItems.textContent = null;
+    divListItems.innerHTML = null;
 
     items.forEach( (item) => {
 
@@ -32,12 +32,33 @@ function showItems(){
 function handleAddItem(){
     const content = addInput.value;
     items.push(content);
+
+    saveItemsInLocalStorage();
     showItems();
 }
 
 function handleRemoveItem( item ){
     items.pop(item);
+
+    saveItemsInLocalStorage();
     showItems();
 }
 
-showItems();
+function saveItemsInLocalStorage(){
+    const stringedItems = JSON.stringify(items);
+    localStorage.setItem(storageKey, stringedItems);
+
+}
+
+function loadItemsFromLocalStorage(){
+    const storage = localStorage.getItem("items");
+    if (storage){
+        return items = JSON.parse(storage); 
+    }
+
+    showItems();
+
+}
+
+document.addEventListener("DOMContentLoaded", loadItemsFromLocalStorage)
+
