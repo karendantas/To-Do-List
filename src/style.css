@@ -1,0 +1,114 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #1F2544;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#app{
+  width: 100%;
+  height: 90vh;
+
+  display:flex;
+  justify-content: center;
+  align-items: center;
+
+  flex-direction : column;
+}
+
+
+/* Barra de pesquisa  */
+.list-search{
+    height: 100px;
+
+}
+
+.list-search > input {
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    
+
+    width: 480px;
+    height: 50px;
+
+    padding: 0 20px 0;
+
+    background-color: #81689D;
+
+    color: white;
+
+}
+
+::placeholder{
+  color: white;
+}
+
+
+/* Lista de To-dos */
+
+.item {
+    width: 500px;
+    height: 100px;
+    background-color: #474F7A;
+    border-radius: 10px;
+
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px 0;
+    
+    margin: 20px 0 20px 0;
+}
+
+.item:hover{
+  background-color: #FFD0EC;
+  transition: all 0.4s ease-in-out; 
+}
+
+.item > p {
+  width: 450px;
+  margin: 0 10px 0;
+
+  text-overflow: ellipsis;
+  overflow: hidden;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* number of lines to show */
+          line-clamp: 2;
+  -webkit-box-orient: vertical;
+
+  font-size: 1.4em;
+  font-weight: 400;
+  line-height: 2em;
+
+}
+
+.item > button {
+  border-radius: 5px;
+  border: none;
+
+  width: 40px;
+  height: 40px;
+  font-size: 1.4em;
+
+  display:flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color:  #81689D; 
+
+}
+
+.add-item{
+  background-color: #FFD0EC !important;
+ 
+}
