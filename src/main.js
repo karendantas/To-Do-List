@@ -4,11 +4,6 @@ let items = ['Arrumar a casa', 'BVuyrrraaaaa'];
 const addInput = document.getElementById('additem');
 const divListItems = document.getElementById('list-items');
 
-function addItem(){
-    const content = addInput.value;
-    items.push(content);
-    showItems();
-}
 
 function showItems(){
 
@@ -21,7 +16,9 @@ function showItems(){
         const button = document.createElement('button');
         
         text.textContent = item;
+
         button.textContent = 'x';
+        button.onclick = () => handleRemoveItem(item);
 
         div.classList.add('item');
         div.appendChild(text);
@@ -30,6 +27,17 @@ function showItems(){
         divListItems.appendChild(div);
 
     })
+}
+
+function handleAddItem(){
+    const content = addInput.value;
+    items.push(content);
+    showItems();
+}
+
+function handleRemoveItem( item ){
+    items.pop(item);
+    showItems();
 }
 
 showItems();
