@@ -44,6 +44,8 @@ function handleAddItem(){
     loadItemsFromLocalStorage();
 }
 
+
+
 function handleRemoveItem( item ){
     items.pop(item);
 
