@@ -3,14 +3,18 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
   background-color: #1F2544;
+  color: #FFFF;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --card-item:#474F7A; 
+  --card-add: #FFD0EC;
+  --search-input: #81689D;
+  --button: #81689D;
 }
 
 #app{
@@ -55,7 +59,7 @@
     
     padding: 0 10px 0;
 
-    background-color: #81689D;
+    background-color: var(--search-input) ;
 
     display:flex;
     align-items: center;
@@ -87,7 +91,7 @@
   
 }
 .list-items > p{
-  color: #FFD0EC;
+  color: var(--card-add);
 }
 
 /* To-dos */
@@ -95,7 +99,7 @@
 .item {
     width: 100%;
     height: 100px;
-    background-color: #474F7A;
+    background-color: var(--card-item);
     border-radius: 10px;
 
     display:flex;
@@ -107,7 +111,7 @@
 }
 
 .item:hover{
-  background-color: #474F7C;
+  background-color: var(--card-item);
   transition: all 0.4s ease-in-out; 
 
 }
@@ -142,13 +146,13 @@
   align-items: center;
   justify-content: center;
 
-  background-color:  #81689D; 
+  background-color: var(--button); 
 
 }
 
 .add-item{
-  background-color: #FFD0EC;
-  color: #474F7A;
+  background-color: var(--card-add);
+  color: var(--card-item);
 }
 
 .add-item > input{
@@ -159,12 +163,16 @@
   background-color: transparent;
 
   font-size: 1.2em;
-  color: #474F7A;
+  color: var(--card-item);
 
 }
 
+.add-item:hover{
+  background:var(--card-add);
+}
+
 .add-item > input::placeholder{
-  color: #474F7A;
+  color: var(--card-item);
 }
 
 /* Other elements */
