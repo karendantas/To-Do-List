@@ -55,6 +55,11 @@
 }
 
 
+/* Container da lista de to-os */
+.list-items > p{
+  color: #FFD0EC;
+}
+
 /* Lista de To-dos */
 
 .item {

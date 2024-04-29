@@ -39,14 +39,14 @@ function handleAddItem(){
 
     addInput.value = "";
     saveItemsInLocalStorage();
-    showItems();
+    loadItemsFromLocalStorage();
 }
 
 function handleRemoveItem( item ){
     items.pop(item);
 
     saveItemsInLocalStorage();
-    showItems();
+    loadItemsFromLocalStorage();
 }
 
 function saveItemsInLocalStorage(){
