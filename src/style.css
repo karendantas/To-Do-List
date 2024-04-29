@@ -31,10 +31,19 @@
 
 #app > .title {
   display: flex;
-  justify-content: start;
+  justify-content: space-between;
+  align-items:center;
+  
 
   width: 100%;
   height: 100px;
+}
+
+.title>img{
+  height: 40px;
+  width: 40px;
+
+
 }
 
 /* search bar  */
@@ -98,10 +107,9 @@
 }
 
 .item:hover{
-  background-color: #FFD0EC;
+  background-color: #474F7C;
   transition: all 0.4s ease-in-out; 
 
-  color: #474F7A;
 }
 
 .item > p {
@@ -163,6 +171,9 @@
 
 #app > hr{
   width: 100%;
+  height: 5px;
+  background-color: #ffff;
+  border-radius: 30px;
 }
 
 /* Responsivity */

@@ -17,7 +17,6 @@ function showItems(){
         const button = document.createElement('button');
         
         text.textContent = item;
-
         button.textContent = 'x';
         button.onclick = () => handleRemoveItem(items.indexOf(item));
 
